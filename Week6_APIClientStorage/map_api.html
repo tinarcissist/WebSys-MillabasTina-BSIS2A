@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps API</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+        input, button { padding: 8px; margin: 5px 0; }
+        button { cursor: pointer; }
+        #map { height: 400px; width: 100%; margin-top: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h2>Google Maps Integration</h2>
+    <label for="locationInput">Search a location:</label><br>
+    <input type="text" id="locationInput" placeholder="Enter a city or address">
+    <button onclick="searchLocation()">Search</button>
+
+    <div id="map"></div>
+
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 5,
+                center: { lat: 14.5995, lng: 120.9842 } 
+            });
+        }
+
+        function searchLocation() {
+            let location = document.getElementById("locationInput").value.trim();
+            if (!location) {
+                alert("Please enter a location.");
+                return;
+            }
+
+            let geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: location }, function (results, status) {
+                if (status === "OK") {
+                    map.setZoom(10);
+                    map.setCenter(results[0].geometry.location);
+                    new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert("Location not found: " + status);
+                }
+            });
+        }
+    </script>
+    <!-- Replace YOUR_API_KEY with your Google Maps API key from https://console.cloud.google.com/ -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AQ.Ab8RN6IirRVyFI4588zSRyVbLl_DQB1qnl4dNGFtP8LhMuEndQ&callback=initMap"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather API </title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        input, button { padding: 8px; margin: 5px 0; }
+        button { cursor: pointer; }
+        #weatherResult { margin-top: 20px; }
+        #weatherResult img { display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <h2>Weather Checker</h2>
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weatherResult"></div>
+
+    <script>
+
+        const apiKey = "8c115ee561d4ebc2ca13838c0116b821";
+
+        function getWeather() {
+            let city = document.getElementById("city").value.trim();
+            let resultDiv = document.getElementById("weatherResult");
+
+            if (!city) {
+                resultDiv.innerText = "Please enter a city name.";
+                return;
+            }
+            if (apiKey === "YOUR_API_KEY") {
+                resultDiv.innerText = "Add your OpenWeatherMap API key in the script first.";
+                return;
+            }
+
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+
+            resultDiv.innerText = "Loading...";
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error("City not found");
+                    return response.json();
+                })
+                .then(data => {
+                    resultDiv.innerHTML = `
+                        <p>Temperature: ${data.main.temp}°C</p>
+                        <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="${data.weather[0].description}">
+                        <p>${data.weather[0].description}</p>
+                    `;
+                })
+                .catch(error => {
+                    resultDiv.innerText = "Error: " + error.message;
+                    console.error("Error fetching weather data:", error);
+                });
+        }
+    </script>
+</body>
+</html>
