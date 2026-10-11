@@ -1,9 +1,9 @@
 # Web Systems Portfolio
 
 ## Student Information
-Name:Tina R. Millabas
-Course & Section:BSIS2A
-Semester:First Semester
+- **Name:** Tina R. Millabas
+- **Course & Section:** BSIS2A
+- **Semester:** First Semester
 
 ---
 
@@ -22,10 +22,10 @@ The project demonstrates my understanding of:
 ---
 
 ## Personalization Theme
-Project Brand Name: TinaDev
-Color Scheme Used:** [e.g., primary, secondary, and accent colors with hex codes]
-Typography Used:** [e.g., heading font and body font]
-Design Goal: a clean, responsive layout that is easy to read on any device
+- **Project Brand Name:** TinaDev
+- **Color Scheme Used:** #1b2a49, #f2b705
+- **Typography Used:** sans-serif
+- **Design Goal:** A clean, responsive layout that is easy to read on any device.
 
 ---
 
