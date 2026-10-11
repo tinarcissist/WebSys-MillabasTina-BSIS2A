@@ -1,0 +1,172 @@
+:root {
+  --primary: #1b2a49;
+  --secondary: #f2b705;
+  --text: #222;
+  --bg: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.site-header, .site-footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.site-header a, .site-footer a { color: var(--secondary); }
+
+body {
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+h1, h2 {
+    margin: 0 0 10px 0;
+}
+header {
+    background-color: #514b4e;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #7e737d;
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px; 
+    padding: 15px;         
+    background-color: #fff;
+    border: 1px solid #ddd; 
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+section:hover {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+/* Hover effect on submit button */
+form button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #393337;
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
