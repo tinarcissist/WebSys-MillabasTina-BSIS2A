@@ -1,0 +1,21 @@
+:root {
+  --primary: #1b2a49;
+  --secondary: #f2b705;
+  --text: #222;
+  --bg: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.site-header, .site-footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.site-header a, .site-footer a { color: var(--secondary); }
