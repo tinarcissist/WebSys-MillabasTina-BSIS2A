@@ -1,0 +1,292 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1, h2 {
+    margin: 0 0 10px 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on nav links */
+nav ul li a:hover {
+    background-color: #575757;
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;        
+    background-color: #fff;
+    border: 1px solid #ddd; 
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+section:hover {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+/* Hover effect on submit button */
+form button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#themeToggle {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#themeToggle:hover {
+    background-color: #ddd;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #111;
+}
+
+.dark-mode section {
+    background-color: #1e1e1e;
+    border-color: #444;
+    color: #fff;
+}
+
+.dark-mode #themeToggle {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode form input,
+.dark-mode form textarea {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #555;
+}
+
+#todo input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+#todo button {
+    padding: 8px 14px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#todo button:hover {
+    background-color: #555;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.dark-mode #taskList li {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+#taskList li button.removeTask {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#taskList li button.removeTask:hover {
+    background-color: #992d22;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.modal-content .close:hover {
+    color: #c0392b;
+}
+
+.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
